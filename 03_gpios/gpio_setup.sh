@@ -24,8 +24,7 @@ else
     pins=""
 fi
 
-for pin in $pins
-do
+for pin in $pins[@]; do
     echo $pin
     config-pin $pin out
     config-pin -q $pin
