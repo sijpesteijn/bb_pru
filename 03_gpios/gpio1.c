@@ -6,7 +6,7 @@
 #define GPIO0	0x44e07000		// GPIO Bank 0  See Table 2.2 of TRM <1>
 #define GPIO_SETDATAOUT		0x194	// For setting the GPIO registers
 #define GPIO_CLEARDATAOUT	0x190	// For clearing the GPIO registers
-#define P9_11	(0x1<<30)			// Bit position tied to P9_11
+#define P9_11	(0x1<<31)			// Bit position tied to P9_11
 
 void main(void)
 {
