@@ -10,6 +10,7 @@
 #define P9_11	(0x1<<30)			// Bit position tied to P9_11
 //#define P9_13	(0x1<<31)			// Bit position tied to P9_13
 #define P9_17	(0x1<<5)			// Bit position tied to P9_17
+#define deley   1000000
 
 void main(void)
 {
@@ -17,18 +18,18 @@ void main(void)
 	
 	while(1) {
 		gpio0[GPIO_SETDATAOUT/4] = P8_17;
-		__delay_cycles(100000000);
+		__delay_cycles(deley);
 		gpio0[GPIO_SETDATAOUT/4] = P9_11;
-		__delay_cycles(100000000);
+		__delay_cycles(deley);
 //		gpio0[GPIO_SETDATAOUT/4] = P9_13;
 		gpio0[GPIO_SETDATAOUT/4] = P9_17;
-		__delay_cycles(100000000);
+		__delay_cycles(deley);
 		gpio0[GPIO_CLEARDATAOUT/4] = P8_17;
-		__delay_cycles(100000000);
+		__delay_cycles(deley);
 		gpio0[GPIO_CLEARDATAOUT/4] = P9_11;
-		__delay_cycles(100000000);
+		__delay_cycles(deley);
 //		gpio0[GPIO_CLEARDATAOUT/4] = P9_13;
 		gpio0[GPIO_CLEARDATAOUT/4] = P9_17;
-		__delay_cycles(100000000);
+		__delay_cycles(deley);
 	}
 }
