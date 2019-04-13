@@ -8,11 +8,12 @@
 #define GPIO_CLEARDATAOUT	0x190	// For clearing the GPIO registers
 #define P8_17	(0x1<<27)			// Bit position tied to P8_17
 #define P8_19	(0x1<<22)			// Bit position tied to P8_19
-#define P8_31	(0x1<<10)			// Bit position tied to P8_31
+//#define P8_31	(0x1<<10)			// Bit position tied to P8_31
 
 #define P9_11	(0x1<<30)			// Bit position tied to P9_11
 //#define P9_13	(0x1<<31)			// Bit position tied to P9_13
 #define P9_17	(0x1<<5)			// Bit position tied to P9_17
+#define P9_26	(0x1<<14)			// Bit position tied to P9_26
 #define deley   10000000
 
 void main(void)
@@ -24,26 +25,24 @@ void main(void)
 		__delay_cycles(deley);
 		gpio0[GPIO_SETDATAOUT/4] = P8_19;
 		__delay_cycles(deley);
-		gpio0[GPIO_SETDATAOUT/4] = P8_31;
-		__delay_cycles(deley);
 
 		gpio0[GPIO_SETDATAOUT/4] = P9_11;
 		__delay_cycles(deley);
-//		gpio0[GPIO_SETDATAOUT/4] = P9_13;
 		gpio0[GPIO_SETDATAOUT/4] = P9_17;
+		__delay_cycles(deley);
+		gpio0[GPIO_SETDATAOUT/4] = P9_26;
 		__delay_cycles(deley);
 
 		gpio0[GPIO_CLEARDATAOUT/4] = P8_17;
 		__delay_cycles(deley);
 		gpio0[GPIO_CLEARDATAOUT/4] = P8_19;
 		__delay_cycles(deley);
-		gpio0[GPIO_CLEARDATAOUT/4] = P8_31;
-		__delay_cycles(deley);
 
 		gpio0[GPIO_CLEARDATAOUT/4] = P9_11;
 		__delay_cycles(deley);
-//		gpio0[GPIO_CLEARDATAOUT/4] = P9_13;
 		gpio0[GPIO_CLEARDATAOUT/4] = P9_17;
+		__delay_cycles(deley);
+		gpio0[GPIO_CLEARDATAOUT/4] = P9_26;
 		__delay_cycles(deley);
 	}
 }
