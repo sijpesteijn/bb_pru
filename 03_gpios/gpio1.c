@@ -7,6 +7,7 @@
 #define GPIO_SETDATAOUT		0x194	// For setting the GPIO registers
 #define GPIO_CLEARDATAOUT	0x190	// For clearing the GPIO registers
 #define P8_13	(0x1<<23)			// Bit position tied to P8_13
+#define P8_14	(0x1<<26)			// Bit position tied to P8_14
 #define P8_17	(0x1<<27)			// Bit position tied to P8_17
 #define P8_19	(0x1<<22)			// Bit position tied to P8_19
 //#define P8_31	(0x1<<10)			// Bit position tied to P8_31
@@ -24,6 +25,8 @@ void main(void)
 	while(1) {
 		gpio0[GPIO_SETDATAOUT/4] = P8_13;
 		__delay_cycles(deley);
+		gpio0[GPIO_SETDATAOUT/4] = P8_14;
+		__delay_cycles(deley);
 		gpio0[GPIO_SETDATAOUT/4] = P8_17;
 		__delay_cycles(deley);
 		gpio0[GPIO_SETDATAOUT/4] = P8_19;
@@ -35,6 +38,8 @@ void main(void)
 		__delay_cycles(deley);
 
 		gpio0[GPIO_CLEARDATAOUT/4] = P8_13;
+		__delay_cycles(deley);
+		gpio0[GPIO_CLEARDATAOUT/4] = P8_14;
 		__delay_cycles(deley);
 		gpio0[GPIO_CLEARDATAOUT/4] = P8_17;
 		__delay_cycles(deley);
