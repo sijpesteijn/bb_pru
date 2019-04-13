@@ -16,7 +16,7 @@
 //#define P9_13	(0x1<<31)			// Bit position tied to P9_13
 #define P9_17	(0x1<<5)			// Bit position tied to P9_17
 //#define P9_26	(0x1<<14)			// Bit position tied to P9_26
-#define deley   10000000
+#define deley   100000000
 
 void main(void)
 {
