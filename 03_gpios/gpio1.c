@@ -17,12 +17,16 @@ void main(void)
 	
 	while(1) {
 		gpio0[GPIO_SETDATAOUT/4] = P8_17;
+		__delay_cycles(100000000);
 		gpio0[GPIO_SETDATAOUT/4] = P9_11;
+		__delay_cycles(100000000);
 //		gpio0[GPIO_SETDATAOUT/4] = P9_13;
 		gpio0[GPIO_SETDATAOUT/4] = P9_17;
 		__delay_cycles(100000000);
 		gpio0[GPIO_CLEARDATAOUT/4] = P8_17;
+		__delay_cycles(100000000);
 		gpio0[GPIO_CLEARDATAOUT/4] = P9_11;
+		__delay_cycles(100000000);
 //		gpio0[GPIO_CLEARDATAOUT/4] = P9_13;
 		gpio0[GPIO_CLEARDATAOUT/4] = P9_17;
 		__delay_cycles(100000000);
