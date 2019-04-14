@@ -60,6 +60,16 @@ void main(void)
 		__delay_cycles(deley);
 		gpio0[GPIO_SETDATAOUT/4] = P9_17;
 		__delay_cycles(deley);
+		gpio0[GPIO_SETDATAOUT/4] = P9_18;
+		__delay_cycles(deley);
+		gpio0[GPIO_SETDATAOUT/4] = P9_19;
+		__delay_cycles(deley);
+		gpio0[GPIO_SETDATAOUT/4] = P9_20;
+		__delay_cycles(deley);
+		gpio0[GPIO_SETDATAOUT/4] = P9_21;
+		__delay_cycles(deley);
+		gpio0[GPIO_SETDATAOUT/4] = P9_22;
+		__delay_cycles(deley);
 
 		gpio0[GPIO_CLEARDATAOUT/4] = P8_13;
 		__delay_cycles(deley);
@@ -73,7 +83,18 @@ void main(void)
 		gpio0[GPIO_CLEARDATAOUT/4] = P9_11;
 		__delay_cycles(deley);
 		gpio0[GPIO_CLEARDATAOUT/4] = P9_17;
-		__delay_cycles(deley);	}
+		__delay_cycles(deley);
+		gpio0[GPIO_CLEARDATAOUT/4] = P9_18;
+		__delay_cycles(deley);
+		gpio0[GPIO_CLEARDATAOUT/4] = P9_19;
+		__delay_cycles(deley);
+		gpio0[GPIO_CLEARDATAOUT/4] = P9_20;
+		__delay_cycles(deley);
+		gpio0[GPIO_CLEARDATAOUT/4] = P9_21;
+		__delay_cycles(deley);
+		gpio0[GPIO_CLEARDATAOUT/4] = P9_22;
+		__delay_cycles(deley);
+	}
 }
 
 
