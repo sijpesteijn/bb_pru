@@ -25,8 +25,6 @@
 
 #define deley   10000000
 
-using namespace std;
-
 void leftToRight(unint32_t[] gpios) {
 	uint32_t *gpio0 = (uint32_t *)GPIO0;
 	for( int i = 0; i < gpio_length; i++) {
