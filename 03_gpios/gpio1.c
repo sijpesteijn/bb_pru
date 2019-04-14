@@ -25,7 +25,7 @@
 
 #define deley   10000000
 
-static gpios char[14];
+static int gpios[14];
 
 void leftToRight() {
 	gpio0[GPIO_SETDATAOUT/4] = P8_13;
