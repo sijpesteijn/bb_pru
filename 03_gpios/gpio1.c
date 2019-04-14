@@ -119,10 +119,13 @@ void wiggle(uint32_t gpios[]) {
 
 void knightrider(uint32_t gpios[]) {
 	uint32_t *gpio0 = (uint32_t *)GPIO0;
-	gpio0[GPIO_SETDATAOUT/4] = gpios[0];
-	__delay_cycles(deley);
-	gpio0[GPIO_CLEARDATAOUT/4] = gpios[0];
-	__delay_cycles(deley);
+	int i = 0;
+	for(i=0;i<14;i++) {
+		gpio0[GPIO_SETDATAOUT / 4] = gpios[i];
+		__delay_cycles(deley);
+		gpio0[GPIO_CLEARDATAOUT / 4] = gpios[i];
+		__delay_cycles(deley);
+	}
 }
 
 void main(void)
