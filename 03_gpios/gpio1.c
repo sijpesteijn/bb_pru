@@ -25,7 +25,7 @@
 
 #define deley   10000000
 
-void leftToRight(unint32_t[] gpios) {
+void leftToRight(uint32_t[] gpios) {
 	uint32_t *gpio0 = (uint32_t *)GPIO0;
 	for( int i = 0; i < gpio_length; i++) {
 		gpio0[GPIO_SETDATAOUT / 4] = gpios[i];
@@ -40,7 +40,7 @@ void leftToRight(unint32_t[] gpios) {
 void main(void)
 {
 //	uint32_t *gpio0 = (uint32_t *)GPIO0;
-	uint32_t gpios[13] = { P8_13, P8_14, P8_17, P8_19, P9_11, P9_17, P9_18, P9_19, P9_20, P9_21, P9_22, P9_24, P9_26 };
+	uint32_t gpios[] = { P8_13, P8_14, P8_17, P8_19, P9_11, P9_17, P9_18, P9_19, P9_20, P9_21, P9_22, P9_24, P9_26 };
 	while(1) {
 		leftToRight(gpios);
 	}
