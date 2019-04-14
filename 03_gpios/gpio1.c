@@ -27,9 +27,9 @@
 
 void leftToRight(uint32_t gpios[]) {
 	uint32_t *gpio0 = (uint32_t *)GPIO0;
-	int i;
+	int i, length = sizeof(gpios)/sizeof(gpios[0]);
 
-	for(i=0; i < sizeof(gpios)/sizeof(gpios[0])); i++)
+	for(i=0; i < length; i++)
 	{
 
 	}
