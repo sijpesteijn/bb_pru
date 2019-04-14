@@ -25,12 +25,12 @@
 
 #define deley   10000000
 
-void leftToRight(uint32_t *gpios) {
+void leftToRight(uint32_t gpios[]) {
 	uint32_t *gpio0 = (uint32_t *)GPIO0;
-	for( int i = 0; i < sizeof(gpios)/ sizeof(uint32_t); i++) {
+//	for( int i = 0; i < sizeof(gpios)/ sizeof(uint32_t); i++) {
 //		gpio0[GPIO_SETDATAOUT / 4] = gpios[i];
 //		__delay_cycles(deley);
-	}
+//	}
 //	for( int i = 0; i < gpio_length; i++) {
 //		gpio0[GPIO_CLEARDATAOUT / 4] = gpios[i];
 //		__delay_cycles(deley);
