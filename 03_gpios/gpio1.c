@@ -1,6 +1,5 @@
 // This code accesses GPIO without using R30 and R31
 #include <stdint.h>
-#include <array>
 #include <pru_cfg.h>
 #include "resource_table_empty.h"
 
