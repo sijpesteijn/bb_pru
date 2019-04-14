@@ -58,6 +58,8 @@ void main(void)
 
 		gpio0[GPIO_SETDATAOUT/4] = P9_11;
 		__delay_cycles(deley);
+		gpio0[GPIO_SETDATAOUT/4] = P9_13;
+		__delay_cycles(deley);
 		gpio0[GPIO_SETDATAOUT/4] = P9_17;
 		__delay_cycles(deley);
 		gpio0[GPIO_SETDATAOUT/4] = P9_18;
@@ -81,6 +83,8 @@ void main(void)
 		__delay_cycles(deley);
 
 		gpio0[GPIO_CLEARDATAOUT/4] = P9_11;
+		__delay_cycles(deley);
+		gpio0[GPIO_CLEARDATAOUT/4] = P9_13;
 		__delay_cycles(deley);
 		gpio0[GPIO_CLEARDATAOUT/4] = P9_17;
 		__delay_cycles(deley);
