@@ -13,7 +13,7 @@
 #define P8_19	(0x1<<22)			// Bit position tied to P8_19
 
 #define P9_11	(0x1<<30)			// Bit position tied to P9_11
-//#define P9_13	(0x1<<31)			// Bit position tied to P9_13
+#define P9_13	(((uint32_u)0x1)<<31)			// Bit position tied to P9_13
 #define P9_17	(0x1<<5)			// Bit position tied to P9_17
 #define P9_18	(0x1<<4)			// Bit position tied to P9_18
 #define P9_19	(0x1<<13)			// Bit position tied to P9_19
