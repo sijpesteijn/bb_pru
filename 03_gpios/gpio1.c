@@ -1,5 +1,6 @@
 // This code accesses GPIO without using R30 and R31
 #include <stdint.h>
+#include <array>
 #include <pru_cfg.h>
 #include "resource_table_empty.h"
 
@@ -25,10 +26,9 @@
 
 #define deley   10000000
 
-int gpio_length = 13;
-uint32_t gpios[13];
+using namespace std;
 
-void leftToRight() {
+void leftToRight(array gpios) {
 	uint32_t *gpio0 = (uint32_t *)GPIO0;
 	for( int i = 0; i < gpio_length; i++) {
 		gpio0[GPIO_SETDATAOUT / 4] = gpios[i];
@@ -42,10 +42,10 @@ void leftToRight() {
 
 void main(void)
 {
-	uint32_t *gpio0 = (uint32_t *)GPIO0;
-	gpios = { P8_13, P8_14, P8_17, P8_19, P9_11, P9_17, P9_18, P9_19, P9_20, P9_21, P9_22, P9_24, P9_26 };
+//	uint32_t *gpio0 = (uint32_t *)GPIO0;
+	array<uint32_t,13> gpios = { P8_13, P8_14, P8_17, P8_19, P9_11, P9_17, P9_18, P9_19, P9_20, P9_21, P9_22, P9_24, P9_26 };
 	while(1) {
-		leftToRight();
+		leftToRight(gpios);
 	}
 }
 
