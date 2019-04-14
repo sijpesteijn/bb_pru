@@ -25,7 +25,7 @@
 
 #define deley   10000000
 
-static uint32_t gpios[14];
+static uint32_t gpios[14] = { P8_13 };
 
 void leftToRight() {
 	uint32_t *gpio0 = (uint32_t *)GPIO0;
