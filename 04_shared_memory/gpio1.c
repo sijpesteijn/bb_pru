@@ -19,7 +19,5 @@ int main(void)
 
 	while(1) {}
 
-	__halt();
-
-	return 0;
+//	__halt();
 }
