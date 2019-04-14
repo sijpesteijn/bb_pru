@@ -27,6 +27,10 @@
 
 void leftToRight(uint32_t gpios[]) {
 	uint32_t *gpio0 = (uint32_t *)GPIO0;
+	for(int i=0; i< sizeof(gpios)/sizeof(gpios[0])); i++)
+	{
+
+	}
 //	for( int i = 0; i < sizeof(gpios)/ sizeof(uint32_t); i++) {
 //		gpio0[GPIO_SETDATAOUT / 4] = gpios[i];
 //		__delay_cycles(deley);
