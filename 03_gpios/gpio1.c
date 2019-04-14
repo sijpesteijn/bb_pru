@@ -27,86 +27,103 @@
 
 void leftToRight(uint32_t gpios[]) {
 	uint32_t *gpio0 = (uint32_t *)GPIO0;
-	int i, length = sizeof(gpios)/sizeof(gpios[0]);
+	gpio0[GPIO_SETDATAOUT/4] = P8_13;
+	__delay_cycles(deley);
+	gpio0[GPIO_SETDATAOUT/4] = P8_14;
+	__delay_cycles(deley);
+	gpio0[GPIO_SETDATAOUT/4] = P8_17;
+	__delay_cycles(deley);
+	gpio0[GPIO_SETDATAOUT/4] = P8_19;
+	__delay_cycles(deley);
 
-	for(i=0; i < length; i++)
-	{
-		gpio0[GPIO_SETDATAOUT / 4] = gpios[i];
-		__delay_cycles(deley);
-	}
-	for(i=0; i < length; i++)
-	{
-		gpio0[GPIO_CLEARDATAOUT / 4] = gpios[i];
-		__delay_cycles(deley);
-	}
+	gpio0[GPIO_SETDATAOUT/4] = P9_11;
+	__delay_cycles(deley);
+	gpio0[GPIO_SETDATAOUT/4] = P9_13;
+	__delay_cycles(deley);
+	gpio0[GPIO_SETDATAOUT/4] = P9_17;
+	__delay_cycles(deley);
+	gpio0[GPIO_SETDATAOUT/4] = P9_18;
+	__delay_cycles(deley);
+	gpio0[GPIO_SETDATAOUT/4] = P9_19;
+	__delay_cycles(deley);
+	gpio0[GPIO_SETDATAOUT/4] = P9_20;
+	__delay_cycles(deley);
+	gpio0[GPIO_SETDATAOUT/4] = P9_21;
+	__delay_cycles(deley);
+	gpio0[GPIO_SETDATAOUT/4] = P9_22;
+	__delay_cycles(deley);
+	gpio0[GPIO_SETDATAOUT/4] = P9_24;
+	__delay_cycles(deley);
+	gpio0[GPIO_SETDATAOUT/4] = P9_26;
+	__delay_cycles(deley);
+
+
+	gpio0[GPIO_CLEARDATAOUT/4] = P8_13;
+	__delay_cycles(deley);
+	gpio0[GPIO_CLEARDATAOUT/4] = P8_14;
+	__delay_cycles(deley);
+	gpio0[GPIO_CLEARDATAOUT/4] = P8_17;
+	__delay_cycles(deley);
+	gpio0[GPIO_CLEARDATAOUT/4] = P8_19;
+	__delay_cycles(deley);
+
+	gpio0[GPIO_CLEARDATAOUT/4] = P9_11;
+	__delay_cycles(deley);
+	gpio0[GPIO_CLEARDATAOUT/4] = P9_13;
+	__delay_cycles(deley);
+	gpio0[GPIO_CLEARDATAOUT/4] = P9_17;
+	__delay_cycles(deley);
+	gpio0[GPIO_CLEARDATAOUT/4] = P9_18;
+	__delay_cycles(deley);
+	gpio0[GPIO_CLEARDATAOUT/4] = P9_19;
+	__delay_cycles(deley);
+	gpio0[GPIO_CLEARDATAOUT/4] = P9_20;
+	__delay_cycles(deley);
+	gpio0[GPIO_CLEARDATAOUT/4] = P9_21;
+	__delay_cycles(deley);
+	gpio0[GPIO_CLEARDATAOUT/4] = P9_22;
+	__delay_cycles(deley);
+	gpio0[GPIO_CLEARDATAOUT/4] = P9_24;
+	__delay_cycles(deley);
+	gpio0[GPIO_CLEARDATAOUT/4] = P9_26;
+	__delay_cycles(deley);
+//	int i, length = sizeof(gpios)/sizeof(gpios[0]);
+//
+//	for(i=0; i < length; i++)
+//	{
+//		gpio0[GPIO_SETDATAOUT / 4] = gpios[i];
+//		__delay_cycles(deley);
+//	}
+//	for(i=0; i < length; i++)
+//	{
+//		gpio0[GPIO_CLEARDATAOUT / 4] = gpios[i];
+//		__delay_cycles(deley);
+//	}
+}
+
+void wiggle(uint32_t gpios[]) {
+	uint32_t *gpio0 = (uint32_t *)GPIO0;
+	uint32_t first = P8_13 | P8_17 | P9_11 | P9_17 | P9_19 | P9_21 | P9_24;
+	uint32_t second = P8_14 | P8_19 | P9_13 | P9_18 | P9_20 | P9_22 | P9_26;
+
+	gpio0[GPIO_SETDATAOUT/4] = first;
+	__delay_cycles(deley);
+	gpio0[GPIO_CLEARDATAOUT/4] = second;
+	__delay_cycles(deley);
+	gpio0[GPIO_SETDATAOUT/4] = second;
+	__delay_cycles(deley);
+	gpio0[GPIO_CLEARDATAOUT/4] = first;
+	__delay_cycles(deley);
+
 }
 
 void main(void)
 {
 	uint32_t *gpio0 = (uint32_t *)GPIO0;
-//	uint32_t gpios[] = { P8_13, P8_14, P8_17, P8_19, P9_11, P9_17, P9_18, P9_19, P9_20, P9_21, P9_22, P9_24, P9_26 };
+	uint32_t gpios[] = { P8_13, P8_14, P8_17, P8_19, P9_11, P9_13, P9_17, P9_18, P9_19, P9_20, P9_21, P9_22, P9_24, P9_26 };
 	while(1) {
+		wiggle(gpios)
 //		leftToRight(gpios);
-		gpio0[GPIO_SETDATAOUT/4] = P8_13 | P8_14 | P8_17 | P8_19;
-		__delay_cycles(deley);
-		gpio0[GPIO_SETDATAOUT/4] = P8_14;
-		__delay_cycles(deley);
-		gpio0[GPIO_SETDATAOUT/4] = P8_17;
-		__delay_cycles(deley);
-		gpio0[GPIO_SETDATAOUT/4] = P8_19;
-		__delay_cycles(deley);
-
-		gpio0[GPIO_SETDATAOUT/4] = P9_11;
-		__delay_cycles(deley);
-		gpio0[GPIO_SETDATAOUT/4] = P9_13;
-		__delay_cycles(deley);
-		gpio0[GPIO_SETDATAOUT/4] = P9_17;
-		__delay_cycles(deley);
-		gpio0[GPIO_SETDATAOUT/4] = P9_18;
-		__delay_cycles(deley);
-		gpio0[GPIO_SETDATAOUT/4] = P9_19;
-		__delay_cycles(deley);
-		gpio0[GPIO_SETDATAOUT/4] = P9_20;
-		__delay_cycles(deley);
-		gpio0[GPIO_SETDATAOUT/4] = P9_21;
-		__delay_cycles(deley);
-		gpio0[GPIO_SETDATAOUT/4] = P9_22;
-		__delay_cycles(deley);
-		gpio0[GPIO_SETDATAOUT/4] = P9_24;
-		__delay_cycles(deley);
-		gpio0[GPIO_SETDATAOUT/4] = P9_26;
-		__delay_cycles(deley);
-
-
-		gpio0[GPIO_CLEARDATAOUT/4] = P8_13;
-		__delay_cycles(deley);
-		gpio0[GPIO_CLEARDATAOUT/4] = P8_14;
-		__delay_cycles(deley);
-		gpio0[GPIO_CLEARDATAOUT/4] = P8_17;
-		__delay_cycles(deley);
-		gpio0[GPIO_CLEARDATAOUT/4] = P8_19;
-		__delay_cycles(deley);
-
-		gpio0[GPIO_CLEARDATAOUT/4] = P9_11;
-		__delay_cycles(deley);
-		gpio0[GPIO_CLEARDATAOUT/4] = P9_13;
-		__delay_cycles(deley);
-		gpio0[GPIO_CLEARDATAOUT/4] = P9_17;
-		__delay_cycles(deley);
-		gpio0[GPIO_CLEARDATAOUT/4] = P9_18;
-		__delay_cycles(deley);
-		gpio0[GPIO_CLEARDATAOUT/4] = P9_19;
-		__delay_cycles(deley);
-		gpio0[GPIO_CLEARDATAOUT/4] = P9_20;
-		__delay_cycles(deley);
-		gpio0[GPIO_CLEARDATAOUT/4] = P9_21;
-		__delay_cycles(deley);
-		gpio0[GPIO_CLEARDATAOUT/4] = P9_22;
-		__delay_cycles(deley);
-		gpio0[GPIO_CLEARDATAOUT/4] = P9_24;
-		__delay_cycles(deley);
-		gpio0[GPIO_CLEARDATAOUT/4] = P9_26;
-		__delay_cycles(deley);
 	}
 }
 
