@@ -1,0 +1,2 @@
+#define PRU0_ARM_INTERRUPT      19
+MOV       r31.b0, PRU0_ARM_INTERRUPT+16
