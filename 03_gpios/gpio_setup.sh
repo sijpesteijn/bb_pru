@@ -1,6 +1,6 @@
 #!/bin/bash
 export PRUN=0
-export TARGET=gpio3
+export TARGET=gpio4
 echo PRUN=$PRUN
 echo TARGET=$TARGET
 
