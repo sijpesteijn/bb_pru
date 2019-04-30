@@ -1,6 +1,6 @@
 #!/bin/bash
 export PRUN=0
-export TARGET=gpio1
+export TARGET=gpio3
 echo PRUN=$PRUN
 echo TARGET=$TARGET
 
@@ -9,10 +9,10 @@ machine=$(awk '{print $NF}' /proc/device-tree/model)
 echo -n $machine
 if [ $machine = "Black" ]; then
     echo " Found"
-    pins="P9_11"
+    declare -a pins=("P8_13" "P8_14" "P8_17" "P8_19" "P9_11" "P9_13" "P9_17" "P9_18" "P9_19" "P9_20" "P9_21" "P9_22" "P9_24" "P9_41" "P9_42")
 elif [ $machine = "Wireless" ]; then
-      echo " Found"
-      declare -a pins=("P8_13" "P8_14" "P8_17" "P8_19" "P9_11" "P9_13" "P9_17" "P9_18" "P9_19" "P9_20" "P9_21" "P9_22" "P9_24" "P9_41" "P9_42")
+    echo " Found"
+    declare -a pins=("P8_13" "P8_14" "P8_17" "P8_19" "P9_11" "P9_13" "P9_17" "P9_18" "P9_19" "P9_20" "P9_21" "P9_22" "P9_24" "P9_41" "P9_42")
 elif [ $machine = "Blue" ]; then
     echo " Found"
     pins=""
