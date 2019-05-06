@@ -46,7 +46,7 @@ void main(void)
 	CT_CFG.SYSCFG_bit.STANDBY_INIT = 0;
 
 	/* Toggle GPO pins TODO: Figure out which to use */
-	gpio = 0x000F;
+	gpio = 0x0100;
 
 	/* TODO: Create stop condition, else it will toggle indefinitely */
 	while (1) {
