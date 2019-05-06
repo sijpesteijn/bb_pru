@@ -26,7 +26,7 @@ fi
 
 for pin in ""${pins[@]}""; do
     echo $pin
-    config-pin $pin out
+    config-pin $pin pruout
     config-pin -q $pin
 done
 
